@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://chx0i5at4dma5"]
+[gd_scene load_steps=4 format=3 uid="uid://chx0i5at4dma5"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_a4rys"]
+[ext_resource type="PackedScene" uid="uid://cjecmsfl4kbhf" path="res://Scenes/shotgun.tscn" id="2_2xiiv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2vwpt"]
 
@@ -12,6 +13,42 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 
+[node name="Ray" type="RayCast3D" parent="Head/Camera3D"]
+target_position = Vector3(0, 0, -100)
+collision_mask = 2
+
+[node name="Hand" type="Node3D" parent="Head/Camera3D"]
+transform = Transform3D(0.99863, 0.00273905, 0.0522642, 0, 0.99863, -0.052336, -0.052336, 0.0522642, 0.997261, 0.355, -0.215, -0.58)
+
+[node name="Shotgun" parent="Head/Camera3D/Hand" node_paths=PackedStringArray("playerRay") instance=ExtResource("2_2xiiv")]
+playerRay = NodePath("../../Ray")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_2vwpt")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

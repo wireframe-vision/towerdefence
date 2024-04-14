@@ -1,12 +1,13 @@
-[gd_scene load_steps=30 format=3 uid="uid://b2vf3a22inhx7"]
+[gd_scene load_steps=31 format=3 uid="uid://b2vf3a22inhx7"]
 
 [ext_resource type="Texture2D" uid="uid://bckdowl1q85cl" path="res://Models/couch_fabric.jpg" id="1_ama3a"]
 [ext_resource type="Script" path="res://Scripts/couch.gd" id="1_s1t4l"]
 [ext_resource type="Texture2D" uid="uid://cyewcyxaom221" path="res://Models/bread.png" id="2_j6e5i"]
 [ext_resource type="FontFile" uid="uid://cenb2rctv3j1a" path="res://FjallaOne-Regular.ttf" id="4_ifojs"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_grkd7"]
-size = Vector3(2.58984, 7.83093, 1.15619)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p5rmc"]
+radius = 0.83169
+height = 3.15965
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j5q6e"]
 resource_name = "Material.002"
@@ -342,14 +343,18 @@ _data = {
 "spin": SubResource("Animation_wdwtf")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_grkd7"]
+size = Vector3(2.58984, 7.83093, 1.15619)
+
 [node name="couch" type="Node3D"]
 script = ExtResource("1_s1t4l")
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.91547, -0.0342712)
-shape = SubResource("BoxShape3D_grkd7")
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.506, 0)
+shape = SubResource("CapsuleShape3D_p5rmc")
 
 [node name="couch" type="Node3D" parent="."]
 transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, 0, 0, 0.0982941)
@@ -423,3 +428,5 @@ theme_override_fonts/font = ExtResource("4_ifojs")
 theme_override_font_sizes/font_size = 20
 text = "BREAD: 100 HP"
 horizontal_alignment = 1
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

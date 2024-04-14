@@ -1,0 +1,7 @@
+res://Scenes/game.tscn
+res://Scripts/GameManager.gd
+res://Scenes/squirrel.tscn
+res://Scenes/player.tscn
+res://Scenes/couch.tscn
+res://Scenes/shotgun.tscn
+res://Scripts/shotgun.gd

@@ -1,8 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjp25vrf41irj"]
+[gd_scene load_steps=12 format=3 uid="uid://cjp25vrf41irj"]
 
 [ext_resource type="PackedScene" uid="uid://chx0i5at4dma5" path="res://Scenes/player.tscn" id="1_gi1n2"]
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_y3e53"]
 [ext_resource type="PackedScene" uid="uid://b2vf3a22inhx7" path="res://Scenes/couch.tscn" id="3_uesad"]
-[ext_resource type="PackedScene" uid="uid://blqjxtaf4la00" path="res://Scenes/squirrel.tscn" id="4_sabf3"]
+[ext_resource type="FontFile" uid="uid://cenb2rctv3j1a" path="res://FjallaOne-Regular.ttf" id="4_ij80m"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_x1d1t"]
+vertices = PackedVector3Array(-14.5, 0.5, 0, -2, 0.5, 0, -1.75, 0.5, -1.25, 0, 0.5, -14.5, -14.5, 0.5, -14.5, -1.75, 0.5, -1.25, 0, 0.5, -1.25, 0, 0.5, -14.5, 1.75, 0.5, -1.25, 2, 0.5, 0, 14.5, 0.5, 0, 14.5, 0.5, -14.5, 0, 0.5, -14.5, 0, 0.5, -14.5, 0, 0.5, -1.25, 1.75, 0.5, -1.25, -1.75, 0.5, 1.25, -2, 0.5, 0, -14.5, 0.5, 0, -14.5, 0.5, 14.5, 0, 0.5, 14.5, 0, 0.5, 14.5, 0, 1, 0.25, -0.5, 0.5, 1.25, 0, 0.5, 1.675, 0, 0.5, 14.5, -0.5, 0.5, 1.25, -1.75, 0.5, 1.25, 14.5, 0.5, 0, 2, 0.5, 0, 1.75, 0.5, 1.25, 0, 0.5, 14.5, 14.5, 0.5, 14.5, 0.5, 0.5, 1.25, 0, 1, 0.25, 0, 0.5, 14.5, 0, 0.5, 1.675, 1.75, 0.5, 1.25, 0.5, 0.5, 1.25, 0, 0.5, 14.5)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(7, 6, 5), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(11, 8, 12), PackedInt32Array(15, 14, 13), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(19, 16, 20), PackedInt32Array(22, 24, 23), PackedInt32Array(23, 24, 21), PackedInt32Array(27, 26, 25), PackedInt32Array(29, 28, 30), PackedInt32Array(30, 28, 32), PackedInt32Array(30, 32, 31), PackedInt32Array(34, 33, 36), PackedInt32Array(36, 33, 35), PackedInt32Array(39, 38, 37)]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8tksu"]
+albedo_color = Color(0.442909, 0.682083, 0.462539, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tsvt1"]
+material = SubResource("StandardMaterial3D_8tksu")
+size = Vector2(30, 30)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nkgk2"]
+data = PackedVector3Array(15, 0, 15, -15, 0, 15, 15, 0, -15, -15, 0, 15, -15, 0, -15, 15, 0, -15)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q75nc"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -16,41 +31,103 @@ background_mode = 2
 sky = SubResource("Sky_83jt1")
 tonemap_mode = 2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8tksu"]
-albedo_color = Color(0.442909, 0.682083, 0.462539, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_tsvt1"]
-material = SubResource("StandardMaterial3D_8tksu")
-size = Vector2(30, 30)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nkgk2"]
-data = PackedVector3Array(15, 0, 15, -15, 0, 15, 15, 0, -15, -15, 0, 15, -15, 0, -15, 15, 0, -15)
-
 [node name="Game" type="Node3D"]
+script = ExtResource("1_y3e53")
+wave_number = 15
+squirrel_spawn_min = 2.0
+squirrel_spawn_max = 3.0
+wave_spawn_multi = 0.8
+squirrel_per_wave = 10
+squirrel_per_wave_multi = 1.5
+squirrel_speed = 2.0
+squirrel_speed_multi = 1.2
+squirrel_damage = 1
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_6pulf")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-shadow_enabled = true
-sky_mode = 2
+[node name="Characters" type="Node3D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_gi1n2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 
-[node name="couch" parent="." instance=ExtResource("3_uesad")]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_x1d1t")
+
+[node name="Environment" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="NavigationRegion3D/Environment"]
+mesh = SubResource("PlaneMesh_tsvt1")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Environment/Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Environment/Floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_nkgk2")
+
+[node name="Visuals" type="Node3D" parent="NavigationRegion3D/Environment"]
+
+[node name="couch" parent="NavigationRegion3D/Environment/Visuals" instance=ExtResource("3_uesad")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0213965, 0)
 
-[node name="squirrel" parent="." instance=ExtResource("4_sabf3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="NavigationRegion3D/Environment"]
+environment = SubResource("Environment_6pulf")
 
-[node name="target" type="Marker3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="NavigationRegion3D/Environment"]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+sky_mode = 2
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_tsvt1")
+[node name="SquirrelSpawnPoints" type="Node3D" parent="."]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="1" type="Marker3D" parent="SquirrelSpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_nkgk2")
+[node name="2" type="Marker3D" parent="SquirrelSpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -6)
+
+[node name="3" type="Marker3D" parent="SquirrelSpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -8)
+
+[node name="4" type="Marker3D" parent="SquirrelSpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 2)
+
+[node name="5" type="Marker3D" parent="SquirrelSpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 8)
+
+[node name="SquirrelSpawnTimer" type="Timer" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 8.0
+offset_top = 176.0
+offset_right = 148.0
+offset_bottom = 233.0
+theme_override_constants/separation = 0
+
+[node name="WaveLabel" type="Label" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.25098, 0.25098, 0.25098, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("4_ij80m")
+theme_override_font_sizes/font_size = 14
+text = "WAVE: 1"
+
+[node name="ElimsLabel" type="Label" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.866667, 0.533333, 0.462745, 1)
+theme_override_colors/font_outline_color = Color(0.372549, 0.168627, 0.129412, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("4_ij80m")
+theme_override_font_sizes/font_size = 14
+text = "ELIMS: 5"
+
+[node name="ReqElimsLabel" type="Label" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.866667, 0.533333, 0.462745, 1)
+theme_override_colors/font_outline_color = Color(0.372549, 0.168627, 0.129412, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("4_ij80m")
+theme_override_font_sizes/font_size = 14
+text = "NEEDED ELIMS: 10"
+
+[connection signal="timeout" from="SquirrelSpawnTimer" to="." method="_on_squirrel_spawn_timer_timeout"]

@@ -6,7 +6,8 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_1wqki"]
 
-[node name="squirrel" type="CharacterBody3D"]
+[node name="squirrel" type="CharacterBody3D" groups=["squirrel"]]
+collision_layer = 2
 script = ExtResource("1_qqgdc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -15,7 +16,11 @@ shape = SubResource("BoxShape3D_nr5xq")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_1wqki")
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
-target_position = Vector3(0, 0, -1)
-
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.2
+target_desired_distance = 0.2
+
+[node name="breadEatTimer" type="Timer" parent="."]
+
+[connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
+[connection signal="timeout" from="breadEatTimer" to="." method="_on_bread_eat_timer_timeout"]
