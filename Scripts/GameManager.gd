@@ -24,7 +24,8 @@ var canSpawn = true
 
 func _ready() -> void:
 	randomize()
-	start()
+	#start()
+	endGame(true)
 
 @onready var waveLabel = $CanvasLayer/HBoxContainer/WaveLabel
 @onready var elimsLabel: Label = $CanvasLayer/HBoxContainer/ElimsLabel
@@ -64,7 +65,7 @@ func increaseWave():
 		canSpawn = true
 		
 	else:
-		get_tree().quit()
+		endGame(true)
 
 func squirrelEliminated():
 	squirrelsEliminated += 1
@@ -73,3 +74,11 @@ func squirrelEliminated():
 
 func _on_squirrel_spawn_timer_timeout() -> void:
 	spawnSquirrel()
+
+func endGame(won):
+	$CanvasLayer/AnimationPlayer.play("fade")
+	await $CanvasLayer/AnimationPlayer.animation_finished
+	if won:
+		get_tree().change_scene_to_file("res://Scenes/victory.tscn")
+	else:
+		get_tree().change_scene_to_file("res://Scenes/loss.tscn")

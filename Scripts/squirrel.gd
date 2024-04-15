@@ -10,7 +10,6 @@ var DAMAGE
 var foundBread = false
 var eatingBread = false
 
-
 func _physics_process(delta):
 	
 	if not foundBread:

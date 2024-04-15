@@ -25,16 +25,33 @@ func fire():
 		checkForTargetHit("squirrel")
 		anim.play("fire")
 		canFire = false
+		canReload = false
 		await anim.animation_finished
 		canFire = true
 
+var canReload = true
+var reloading = false
 func reload():
-	if Input.is_action_just_pressed("Reload") and not currentAmmo == maxAmmo and canFire:
+	if Input.is_action_just_pressed("Reload") and not currentAmmo == maxAmmo and canFire and not reloading:
 		canFire = false
+		canReload = true
+		reloading = true
 		anim.play("reload")
 		await anim.animation_finished
-		currentAmmo = maxAmmo
+		var shellsNeeded = maxAmmo - currentAmmo
+		for i in range(shellsNeeded):
+			if canReload:
+				anim.play("load_shell")
+				await anim.animation_finished
+				currentAmmo += 1
+			else:
+				return
+		
+		anim.play("pump")
+		await anim.animation_finished
 		canFire = true
+		reloading = false
+			
 
 func checkForTargetHit(group: String):
 	if playerRay.is_colliding():

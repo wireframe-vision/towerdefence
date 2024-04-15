@@ -359,118 +359,6 @@ tracks/4/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 1.8), Vector3(0, 0, 0), Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_lhdbc"]
-resource_name = "reload"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Visuals:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(0, 0, 0),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -0.205, 0), Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Visuals:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(0, 0),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Visuals/RightHand:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(0, 0),
-"update": 0,
-"values": [Vector3(4.05, -3.15, 5.45), Vector3(1.46, -3.185, 5.45)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Visuals/RightHand:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(0, 0),
-"update": 0,
-"values": [Vector3(0.270526, 0.698132, 0), Vector3(0.1309, -0.122173, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Visuals/LeftHand:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(0, 0),
-"update": 0,
-"values": [Vector3(-3.55, -2.7, 0), Vector3(-13.79, -12.545, 0)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Visuals/LeftHand:rotation")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(0, 0),
-"update": 0,
-"values": [Vector3(0.113446, -0.584685, 0), Vector3(0.113446, -0.584685, 0)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Visuals/shotgun3:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(0, 0),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(1.6, 0.93, 0)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Visuals/shotgun3:rotation")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(0, 0),
-"update": 0,
-"values": [Vector3(0, -4.03897e-28, -2.32831e-10), Vector3(1.78024, 1.01229, -0.165806)]
-}
-
 [sub_resource type="Animation" id="Animation_nq3cd"]
 resource_name = "load_shell"
 length = 0.4
@@ -720,6 +608,118 @@ tracks/8/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 1.8), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_lhdbc"]
+resource_name = "reload"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(0, 0, 0),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.205, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0, 0),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visuals/RightHand:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0, 0),
+"update": 0,
+"values": [Vector3(4.05, -3.15, 5.45), Vector3(1.46, -3.185, 5.45)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visuals/RightHand:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0, 0),
+"update": 0,
+"values": [Vector3(0.270526, 0.698132, 0), Vector3(0.1309, -0.122173, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Visuals/LeftHand:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0, 0),
+"update": 0,
+"values": [Vector3(-3.55, -2.7, 0), Vector3(-13.79, -12.545, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Visuals/LeftHand:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0, 0),
+"update": 0,
+"values": [Vector3(0.113446, -0.584685, 0), Vector3(0.113446, -0.584685, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Visuals/shotgun3:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0, 0),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.6, 0.93, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Visuals/shotgun3:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0, 0),
+"update": 0,
+"values": [Vector3(0, -4.03897e-28, -2.32831e-10), Vector3(1.78024, 1.01229, -0.165806)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8p6rj"]
 _data = {
 "RESET": SubResource("Animation_rnc2j"),
@@ -755,10 +755,10 @@ playerRay = NodePath("../../Ray")
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="RightHand" parent="Head/Camera3D/Hand/Shotgun/Visuals" instance=ExtResource("5_ipfge")]
-transform = Transform3D(7.66044, 1.71778, 6.1941, 0, 9.6363, -2.67239, -6.42788, 2.04716, 7.38184, 4.05, -3.15, 5.45)
+transform = Transform3D(7.66044, 1.71777, 6.1941, 0, 9.6363, -2.67238, -6.42788, 2.04716, 7.38184, 4.05, -3.15, 5.45)
 
 [node name="LeftHand" parent="Head/Camera3D/Hand/Shotgun/Visuals" instance=ExtResource("5_ipfge")]
-transform = Transform3D(8.33886, -0.62481, -5.48389, 0, 9.93572, -1.13203, 5.51937, 0.943986, 8.28526, -3.55, -2.7, -9.53674e-07)
+transform = Transform3D(8.33886, -0.624808, -5.48389, 0, 9.93572, -1.13203, 5.51937, 0.943983, 8.28526, -3.55, -2.7, -9.53674e-07)
 
 [node name="shell" type="MeshInstance3D" parent="Head/Camera3D/Hand/Shotgun/Visuals/LeftHand"]
 transform = Transform3D(0.0647913, 0.0186089, 0.043079, -0.0260689, 0.0753393, 0.00666341, -0.0390193, -0.0194344, 0.0670805, 0.0712223, 0.198778, -0.712881)
@@ -767,7 +767,7 @@ mesh = SubResource("ArrayMesh_g4e1h")
 skeleton = NodePath("")
 
 [node name="shotgun3" type="MeshInstance3D" parent="Head/Camera3D/Hand/Shotgun/Visuals"]
-transform = Transform3D(1, 2.32831e-10, -4.03897e-28, -2.32831e-10, 1, 0, 4.03897e-28, 9.40395e-38, 1, 0, 0, 0)
+transform = Transform3D(1, 2.32831e-10, -4.03897e-28, -2.32831e-10, 1, 0, 4.03897e-28, 9.40397e-38, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_8gqvd")
 skeleton = NodePath("")
 
@@ -777,7 +777,6 @@ mesh = SubResource("ArrayMesh_upnwt")
 skeleton = NodePath("")
 
 [node name="eject" type="MeshInstance3D" parent="Head/Camera3D/Hand/Shotgun/Visuals/shotgun3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_susu3")
 skeleton = NodePath("")
 
