@@ -30,7 +30,7 @@ func _ready() -> void:
 @onready var elimsLabel: Label = $CanvasLayer/HBoxContainer/ElimsLabel
 @onready var reqElimsLabel: Label = $CanvasLayer/HBoxContainer/ReqElimsLabel
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	waveLabel.text = "WAVE: %s" % currentWave
 	elimsLabel.text = "ELIMS: %s" % squirrelsEliminated
 	reqElimsLabel.text = "NEEDED ELIMS: %s" % squirrel_per_wave
@@ -38,7 +38,7 @@ func _process(delta: float) -> void:
 func start():
 	timer.start(randi_range(squirrel_spawn_min, squirrel_spawn_max))
 	
-func spawnSquirrel():
+func spawnSquirrel() -> void:
 	if not squirrelsEliminated == squirrel_per_wave and canSpawn:
 		var newSquirrel = squirrel.instantiate()
 		newSquirrel.name = str($Characters.get_child_count() + 1) + " squirrel"

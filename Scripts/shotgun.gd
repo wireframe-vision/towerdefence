@@ -8,7 +8,7 @@ signal squirrelEliminated
 var maxAmmo: int = 12
 @onready var currentAmmo: int = maxAmmo
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	checkForInput()
 	updateAmmoLabel()
 
@@ -43,3 +43,6 @@ func checkForTargetHit(group: String):
 			owner.owner.squirrelEliminated()
 			target.queue_free()
 			
+
+func play_sound(sound: AudioStream, volume: int):
+	AudioManager.play_sound(sound, volume)
