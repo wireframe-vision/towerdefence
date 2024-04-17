@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://oi0t7w4uaoqd"]
+
+[ext_resource type="Texture2D" uid="uid://cs3ufl6hne21k" path="res://Models/storymode.png" id="1_1ath3"]
+[ext_resource type="Texture2D" uid="uid://d3of6i1wheob0" path="res://Models/endless.png" id="2_fimmy"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Objects" type="CanvasLayer" parent="."]
+
+[node name="Story" type="TextureRect" parent="Objects"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 576.0
+offset_right = 576.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1ath3")
+
+[node name="Endless" type="TextureRect" parent="Objects"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 576.0
+offset_top = 272.0
+offset_right = 576.0
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fimmy")
+
+[node name="Thumbnails" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

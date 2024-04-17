@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://chx0i5at4dma5"]
+[gd_scene load_steps=32 format=3 uid="uid://chx0i5at4dma5"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_a4rys"]
 [ext_resource type="Script" path="res://Scripts/shotgun.gd" id="2_g0xh4"]
@@ -9,7 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://ccfbpowecdnfn" path="res://Scenes/hand.tscn" id="5_ipfge"]
 [ext_resource type="Texture2D" uid="uid://bmm6ss2hgqd6w" path="res://Models/ShotgunCursor.png" id="5_w0p6q"]
 [ext_resource type="AudioStream" uid="uid://vd3unqlits6p" path="res://Sounds/rack.wav" id="6_857c4"]
+[ext_resource type="Texture2D" uid="uid://biiwrifaukkt7" path="res://Models/Muzzle-Flash-Transparent.png" id="6_donj1"]
 [ext_resource type="AudioStream" uid="uid://b565a0i2yhvlo" path="res://Sounds/shell-load.wav" id="8_31ssr"]
+[ext_resource type="AudioStream" uid="uid://dpunxjvdbei8j" path="res://Sounds/grass-footstep.wav" id="11_nu43s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wb1n8"]
 resource_name = "Material.001"
@@ -155,6 +157,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_w2ed2")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ji7du"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+diffuse_mode = 3
+albedo_texture = ExtResource("6_donj1")
+
+[sub_resource type="QuadMesh" id="QuadMesh_h8jn4"]
+material = SubResource("StandardMaterial3D_ji7du")
+size = Vector2(10, 10)
+
 [sub_resource type="Animation" id="Animation_rnc2j"]
 length = 0.001
 tracks/0/type = "value"
@@ -289,6 +302,18 @@ tracks/10/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Visuals/shotgun3/muzzle:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_wwuq7"]
 resource_name = "fire"
@@ -358,10 +383,23 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 1.8), Vector3(0, 0, 0), Vector3(0, 0, 0)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Visuals/shotgun3/muzzle:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15),
+"transitions": PackedFloat32Array(0, 0, 0),
+"update": 1,
+"values": [false, true, false]
+}
 
 [sub_resource type="Animation" id="Animation_nq3cd"]
 resource_name = "load_shell"
 length = 0.4
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -429,10 +467,10 @@ tracks/5/path = NodePath("Visuals/LeftHand:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(0, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.2, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0),
 "update": 0,
-"values": [Vector3(-13.79, -12.545, 0), Vector3(-9.32, -3.6, 3.43), Vector3(-6.325, -2.56, 3.43), Vector3(-4.37, -1.22, 3.43), Vector3(-13.79, -12.545, 0)]
+"values": [Vector3(-13.79, -12.545, 0), Vector3(-9.32, -3.6, 3.43), Vector3(-6.325, -2.56, 3.43), Vector3(-4.37, -1.22, 3.43), Vector3(-6.325, -2.56, 3.43), Vector3(-9.32, -3.6, 3.43), Vector3(-13.79, -12.545, 0), Vector3(-13.79, -12.545, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -441,10 +479,10 @@ tracks/6/path = NodePath("Visuals/LeftHand:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(0, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.2, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0),
 "update": 0,
-"values": [Vector3(0.113446, -0.584685, 0), Vector3(0.113446, -0.584685, 0), Vector3(-0.0959931, -0.575959, -0.462512), Vector3(0.113446, -0.706858, 0), Vector3(0.113446, -0.584685, 0)]
+"values": [Vector3(0.113446, -0.584685, 0), Vector3(0.113446, -0.584685, 0), Vector3(-0.0959931, -0.575959, -0.462512), Vector3(0.113446, -0.706858, 0), Vector3(-0.0959931, -0.575959, -0.462512), Vector3(0.113446, -0.584685, 0), Vector3(0.113446, -0.584685, 0), Vector3(0.113446, -0.584685, 0)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -477,7 +515,7 @@ tracks/9/path = NodePath("Visuals/LeftHand/shell:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.2),
 "transitions": PackedFloat32Array(0, 0, 0, 0),
 "update": 1,
 "values": [false, true, true, false]
@@ -607,6 +645,20 @@ tracks/8/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 1.8), Vector3(0, 0, 0)]
 }
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [ExtResource("6_857c4"), 0],
+"method": &"play_sound"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_lhdbc"]
 resource_name = "reload"
@@ -733,6 +785,8 @@ _data = {
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_a4rys")
+sway_right = Vector3(0, -0.1, 0)
+sway_left = Vector3(0, 0.1, 0)
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -744,10 +798,9 @@ target_position = Vector3(0, 0, -100)
 collision_mask = 2
 
 [node name="Hand" type="Node3D" parent="Head/Camera3D"]
-transform = Transform3D(0.99863, 0.00273905, 0.0522642, 0, 0.99863, -0.052336, -0.052336, 0.0522643, 0.997261, 0.235, -0.215, -0.58)
 
 [node name="Shotgun" type="Node3D" parent="Head/Camera3D/Hand" node_paths=PackedStringArray("playerRay")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.235, -0.215, -0.58)
 script = ExtResource("2_g0xh4")
 playerRay = NodePath("../../Ray")
 
@@ -779,6 +832,11 @@ skeleton = NodePath("")
 [node name="eject" type="MeshInstance3D" parent="Head/Camera3D/Hand/Shotgun/Visuals/shotgun3"]
 mesh = SubResource("ArrayMesh_susu3")
 skeleton = NodePath("")
+
+[node name="muzzle" type="MeshInstance3D" parent="Head/Camera3D/Hand/Shotgun/Visuals/shotgun3"]
+transform = Transform3D(0.570815, 0.344871, -0.745141, -0.302814, 0.931964, 0.199368, 0.763201, 0.111836, 0.63641, -1.028, 0.8, -12.855)
+visible = false
+mesh = SubResource("QuadMesh_h8jn4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Head/Camera3D/Hand/Shotgun"]
 libraries = {
@@ -836,3 +894,10 @@ mouse_filter = 2
 texture = ExtResource("5_w0p6q")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="PlayerAudio" type="Node3D" parent="."]
+
+[node name="FootStep" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+stream = ExtResource("11_nu43s")
+volume_db = -30.0
+max_db = -24.0

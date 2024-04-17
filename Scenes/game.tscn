@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://cjp25vrf41irj"]
+[gd_scene load_steps=16 format=3 uid="uid://cjp25vrf41irj"]
 
 [ext_resource type="PackedScene" uid="uid://chx0i5at4dma5" path="res://Scenes/player.tscn" id="1_gi1n2"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_y3e53"]
 [ext_resource type="PackedScene" uid="uid://b2vf3a22inhx7" path="res://Scenes/couch.tscn" id="3_uesad"]
 [ext_resource type="FontFile" uid="uid://cenb2rctv3j1a" path="res://FjallaOne-Regular.ttf" id="4_ij80m"]
+[ext_resource type="PackedScene" uid="uid://duwsomijaw0n1" path="res://Scenes/shell.tscn" id="5_cmsyw"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_x1d1t"]
 vertices = PackedVector3Array(-14.5, 0.5, 0, -2, 0.5, 0, -1.75, 0.5, -1.25, 0, 0.5, -14.5, -14.5, 0.5, -14.5, -1.75, 0.5, -1.25, 0, 0.5, -1.25, 0, 0.5, -14.5, 1.75, 0.5, -1.25, 2, 0.5, 0, 14.5, 0.5, 0, 14.5, 0.5, -14.5, 0, 0.5, -14.5, 0, 0.5, -14.5, 0, 0.5, -1.25, 1.75, 0.5, -1.25, -1.75, 0.5, 1.25, -2, 0.5, 0, -14.5, 0.5, 0, -14.5, 0.5, 14.5, 0, 0.5, 14.5, 0, 0.5, 14.5, 0, 1, 0.25, -0.5, 0.5, 1.25, 0, 0.5, 1.675, 0, 0.5, 14.5, -0.5, 0.5, 1.25, -1.75, 0.5, 1.25, 14.5, 0.5, 0, 2, 0.5, 0, 1.75, 0.5, 1.25, 0, 0.5, 14.5, 14.5, 0.5, 14.5, 0.5, 0.5, 1.25, 0, 1, 0.25, 0, 0.5, 14.5, 0, 0.5, 1.675, 1.75, 0.5, 1.25, 0.5, 0.5, 1.25, 0, 0.5, 14.5)
@@ -45,9 +46,22 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0.0627451, 0.027451, 0.109804, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fade:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_khqk4"]
 resource_name = "fade"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -55,10 +69,22 @@ tracks/0/path = NodePath("Fade:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 0),
 "update": 0,
 "values": [Color(0.0627451, 0.027451, 0.109804, 0), Color(0.0627451, 0.027451, 0.109804, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fade:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_twsau"]
@@ -167,7 +193,7 @@ theme_override_font_sizes/font_size = 14
 text = "NEEDED ELIMS: 10"
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer"]
-z_index = 4096
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -179,5 +205,8 @@ color = Color(0.0627451, 0.027451, 0.109804, 1)
 libraries = {
 "": SubResource("AnimationLibrary_twsau")
 }
+
+[node name="Shell" parent="." instance=ExtResource("5_cmsyw")]
+transform = Transform3D(0.958223, -0.286023, 0, 0.286023, 0.958223, 0, 0, 0, 1, 1.51845, 1.83359, 1.34343)
 
 [connection signal="timeout" from="SquirrelSpawnTimer" to="." method="_on_squirrel_spawn_timer_timeout"]

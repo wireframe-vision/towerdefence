@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://duwsomijaw0n1"]
+[gd_scene load_steps=8 format=3 uid="uid://duwsomijaw0n1"]
 
 [ext_resource type="Texture2D" uid="uid://bto7bseh8llkq" path="res://Models/shells_pump shotgun.png" id="1_6auql"]
+[ext_resource type="Script" path="res://Scripts/shell.gd" id="1_6rkii"]
+[ext_resource type="AudioStream" uid="uid://bi6k44o1rl7ck" path="res://Sounds/shellImpact.wav" id="3_sg4tr"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_rrf85"]
 height = 0.6
@@ -47,6 +49,11 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_60sru")
 
 [node name="Shell" type="RigidBody3D"]
+collision_layer = 4
+mass = 0.01
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_6rkii")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_rrf85")
@@ -55,3 +62,8 @@ shape = SubResource("CylinderShape3D_rrf85")
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 mesh = SubResource("ArrayMesh_g4e1h")
 skeleton = NodePath("")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_sg4tr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

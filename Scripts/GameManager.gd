@@ -24,8 +24,8 @@ var canSpawn = true
 
 func _ready() -> void:
 	randomize()
-	#start()
-	endGame(true)
+	start()
+	
 
 @onready var waveLabel = $CanvasLayer/HBoxContainer/WaveLabel
 @onready var elimsLabel: Label = $CanvasLayer/HBoxContainer/ElimsLabel
