@@ -785,8 +785,6 @@ _data = {
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_a4rys")
-sway_right = Vector3(0, -0.1, 0)
-sway_left = Vector3(0, 0.1, 0)
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)

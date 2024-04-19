@@ -10,13 +10,10 @@ const BOB_FREQ = 2.0
 const BOB_AMP = 0.08
 var t_bob = 0.0
 
-var mouse_mov
-var sway_treshold = 5
+var mouse_mov : = Vector2.ZERO
 var sway_lerp = 5
 
-@export var sway_right: Vector3
-@export var sway_left: Vector3
-@export var sway_normal: Vector3
+@export var sway_normal : = Vector3.ZERO
 
 @onready var Head = $Head
 @onready var camera = $Head/Camera3D
@@ -31,7 +28,7 @@ func _ready():
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
-		mouse_mov = -event.relative.x
+		mouse_mov = -event.relative
 		rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
@@ -39,12 +36,13 @@ func _unhandled_input(event):
 func _process(delta):
 	
 	if mouse_mov != null:
-		if mouse_mov > sway_treshold:
-			Hand.rotation = Hand.rotation.lerp(sway_left, sway_lerp * delta)
-		elif mouse_mov < sway_treshold:
-			Hand.rotation = Hand.rotation.lerp(sway_right, sway_lerp * delta)
-		else:
-			Hand.rotation = Hand.rotation.lerp(sway_normal, sway_lerp * delta)
+		var rot : = Vector3(
+			clamp(sway_normal.x + mouse_mov.y * 5, -3, 3),
+			clamp(sway_normal.y + mouse_mov.x * 5, -10, 10),
+			sway_normal.z
+		)
+		Hand.rotation_degrees = Hand.rotation_degrees.lerp(rot, delta * sway_lerp)
+		mouse_mov = Vector2.ZERO
 	
 
 func _physics_process(delta):
