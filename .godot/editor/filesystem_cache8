@@ -1,39 +1,55 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1713200053
-FjallaOne-Regular.ttf::FontFile::5080543483048316584::1713197791::1713197791::1::::<><>::
-icon.svg::CompressedTexture2D::5104408668395987322::1713197791::1713197791::1::::<><>::
-::res://Models/::1713198211
-bread.glb::PackedScene::2702019042781461412::1713197791::1713197791::1::::<><>::
-bread.png::CompressedTexture2D::6466971767254007964::1713197791::1713197791::1::::<><>::
-bread_bread.png::CompressedTexture2D::4714665852363087414::1713197791::1713197791::1::::<><>::
-couch.glb::PackedScene::1684863578777528284::1713197791::1713197791::1::::<><>::
-couch_fabric.jpg::CompressedTexture2D::2547650474313317455::1713197791::1713197791::1::::<><>::
-shells.glb::PackedScene::8597553650552499743::1713197791::1713197791::1::::<><>::
-shells_pump shotgun.png::CompressedTexture2D::3750855682897097688::1713197791::1713197791::1::::<><>::
-shotgun2.glb::PackedScene::4216262990980098240::1713197791::1713198211::1::::<><>::uid://pspkot2e5h1p::::res://Models/shotgun2_pump shotgun.png
-shotgun2_pump shotgun.png::CompressedTexture2D::1090920832885583471::1713197791::1713198211::1::::<><>::
-shotgun.glb::PackedScene::537537859686242316::1713197791::1713197791::1::::<><>::
-ShotgunCursor.png::CompressedTexture2D::3255374698920976704::1713197791::1713198211::1::::<><>::
-shotgun_pump shotgun.png::CompressedTexture2D::1375863484348122211::1713197791::1713197791::1::::<><>::
-::res://Scenes/::1713200044
-couch.tscn::PackedScene::4325225024896086354::1713197791::0::1::::<><>::uid://bckdowl1q85cl::::res://Models/couch_fabric.jpg<>res://Scripts/couch.gd<>uid://cyewcyxaom221::::res://Models/bread.png<>uid://cenb2rctv3j1a::::res://FjallaOne-Regular.ttf
-game.tscn::PackedScene::5437200688580222315::1713200043::0::1::::<><>::uid://chx0i5at4dma5::::res://Scenes/player.tscn<>res://Scripts/GameManager.gd<>uid://b2vf3a22inhx7::::res://Scenes/couch.tscn<>uid://cenb2rctv3j1a::::res://FjallaOne-Regular.ttf
-hand.tscn::PackedScene::4923629216831052323::1713197791::0::1::::<><>::
-loss.tscn::PackedScene::8882392772892482604::1713200044::0::1::::<><>::
-player.tscn::PackedScene::5313177748968867350::1713200043::0::1::::<><>::res://Scripts/Player.gd<>res://Scripts/shotgun.gd<>uid://pspkot2e5h1p::::res://Models/shotgun2_pump shotgun.png<>uid://cenb2rctv3j1a::::res://FjallaOne-Regular.ttf<>uid://bto7bseh8llkq::::res://Models/shells_pump shotgun.png<>uid://b5jqku4ip6coi::::res://Sounds/fire.wav<>uid://ccfbpowecdnfn::::res://Scenes/hand.tscn<>uid://bmm6ss2hgqd6w::::res://Models/ShotgunCursor.png<>uid://vd3unqlits6p::::res://Sounds/rack.wav<>uid://b565a0i2yhvlo::::res://Sounds/shell-load.wav
-shell.tscn::PackedScene::8609573784462180744::1713197791::0::1::::<><>::uid://bto7bseh8llkq::::res://Models/shells_pump shotgun.png
-shotgun.tscn::PackedScene::5412942288340386871::1713197791::0::1::::<><>::uid://tuqjg1r3b0l8::::res://Models/shotgun_pump shotgun.png<>res://Scripts/shotgun.gd<>uid://cenb2rctv3j1a::::res://FjallaOne-Regular.ttf
-squirrel.tscn::PackedScene::3192116532181141299::1713200043::0::1::::<><>::res://Scripts/squirrel.gd
-victory.tscn::PackedScene::809171294729598114::1713200043::0::1::::<><>::
-::res://Scripts/::1713200025
-AudioManager.gd::GDScript::-1::1713197791::0::1::::<>Node<>::
-couch.gd::GDScript::-1::1713199232::0::1::::<>Node3D<>::
-GameManager.gd::GDScript::-1::1713200025::0::1::::<>Node3D<>::
-Player.gd::GDScript::-1::1713197791::0::1::::<>CharacterBody3D<>::
-shotgun.gd::GDScript::-1::1713199096::0::1::::<>Node3D<>::
-squirrel.gd::GDScript::-1::1713199154::0::1::::<>CharacterBody3D<>::
-::res://Sounds/::1713198211
-fire.wav::AudioStreamWAV::4511655818095003540::1713197791::1713198211::1::::<><>::
-rack.wav::AudioStreamWAV::1481895349368089837::1713197791::1713198211::1::::<><>::
-shell-load.wav::AudioStreamWAV::4557904539694236784::1713197791::1713198211::1::::<><>::
-shellImpact.wav::AudioStreamWAV::3012587647133043958::1713197791::1713198211::1::::<><>::
+::res://::1713617913
+default_bus_layout.tres::AudioBusLayout::7271157974665240910::1713562460::0::1::::<><>::
+FjallaOne-Regular.ttf::FontFile::5080543483048316584::1713562460::1713562460::1::::<><>::
+icon.png::CompressedTexture2D::5666727448766841165::1713562460::1713617914::1::::<><>::
+icon.svg::CompressedTexture2D::5104408668395987322::1713562460::1713562460::1::::<><>::
+::res://Models/::1713562460
+bread.glb::PackedScene::2702019042781461412::1713562460::1713562460::1::::<><>::
+bread.png::CompressedTexture2D::6466971767254007964::1713562460::1713562460::1::::<><>::
+bread_bread.png::CompressedTexture2D::4714665852363087414::1713562460::1713562460::1::::<><>::
+couch.glb::PackedScene::1684863578777528284::1713562460::1713562460::1::::<><>::
+couch_fabric.jpg::CompressedTexture2D::2547650474313317455::1713562460::1713562460::1::::<><>::
+endless.png::CompressedTexture2D::9153810367436753987::1713562460::1713617914::1::::<><>::
+grass.png::CompressedTexture2D::6492977984984070519::1713562460::1713617914::1::::<><>::
+map.glb::PackedScene::4168148794318220759::1713562460::1713617914::1::::<><>::
+Muzzle-Flash-Transparent.png::CompressedTexture2D::2965813015105039006::1713562460::1713617914::1::::<><>::
+shells.glb::PackedScene::8597553650552499743::1713562460::1713562460::1::::<><>::
+shells_pump shotgun.png::CompressedTexture2D::3750855682897097688::1713562460::1713562460::1::::<><>::
+shotgun2.glb::PackedScene::4216262990980098240::1713562460::1713562460::1::::<><>::
+shotgun2_pump shotgun.png::CompressedTexture2D::1090920832885583471::1713562460::1713562460::1::::<><>::
+shotgun.glb::PackedScene::537537859686242316::1713562460::1713562460::1::::<><>::
+ShotgunCursor.png::CompressedTexture2D::3255374698920976704::1713562460::1713562460::1::::<><>::
+shotgun_pump shotgun.png::CompressedTexture2D::1375863484348122211::1713562460::1713562460::1::::<><>::
+storymode.png::CompressedTexture2D::6095267024790710650::1713562460::1713617914::1::::<><>::
+tree.png::CompressedTexture2D::2426909600504022662::1713562460::1713617914::1::::<><>::
+::res://Scenes/::1713562460
+couch.tscn::PackedScene::4325225024896086354::1713562460::0::1::::<><>::uid://bckdowl1q85cl::::res://Models/couch_fabric.jpg<>res://Scripts/couch.gd<>uid://cyewcyxaom221::::res://Models/bread.png<>uid://cenb2rctv3j1a::::res://FjallaOne-Regular.ttf
+game.tscn::PackedScene::5437200688580222315::1713562460::0::1::::<><>::uid://chx0i5at4dma5::::res://Scenes/player.tscn<>res://Scripts/GameManager.gd<>uid://b2vf3a22inhx7::::res://Scenes/couch.tscn<>uid://cenb2rctv3j1a::::res://FjallaOne-Regular.ttf<>uid://virjr5y2qs4d::::res://Scenes/map.tscn<>uid://duwsomijaw0n1::::res://Scenes/shell.tscn
+hand.tscn::PackedScene::4923629216831052323::1713562460::0::1::::<><>::res://Scripts/outline.gdshader
+loss.tscn::PackedScene::8882392772892482604::1713562460::0::1::::<><>::
+main_menu.tscn::PackedScene::1637002599120902149::1713562460::0::1::::<><>::
+map.tscn::PackedScene::1491529939821599061::1713562460::0::1::::<><>::uid://cyrins8rx5mlr::::res://Models/grass.png<>uid://gbmmp6lhv76::::res://Scenes/tree.tscn
+menu.tscn::PackedScene::1000712403945558715::1713562460::0::1::::<><>::uid://cs3ufl6hne21k::::res://Models/storymode.png<>uid://d3of6i1wheob0::::res://Models/endless.png
+player.tscn::PackedScene::5313177748968867350::1713562460::0::1::::<><>::res://Scripts/Player.gd<>res://Scripts/shotgun.gd<>uid://pspkot2e5h1p::::res://Models/shotgun2_pump shotgun.png<>uid://cenb2rctv3j1a::::res://FjallaOne-Regular.ttf<>uid://bto7bseh8llkq::::res://Models/shells_pump shotgun.png<>uid://b5jqku4ip6coi::::res://Sounds/fire.wav<>uid://ccfbpowecdnfn::::res://Scenes/hand.tscn<>uid://bmm6ss2hgqd6w::::res://Models/ShotgunCursor.png<>uid://vd3unqlits6p::::res://Sounds/rack.wav<>uid://biiwrifaukkt7::::res://Models/Muzzle-Flash-Transparent.png<>uid://b565a0i2yhvlo::::res://Sounds/shell-load.wav<>uid://dpunxjvdbei8j::::res://Sounds/grass-footstep.wav
+shell.tscn::PackedScene::8609573784462180744::1713562460::0::1::::<><>::uid://bto7bseh8llkq::::res://Models/shells_pump shotgun.png<>res://Scripts/shell.gd<>uid://bi6k44o1rl7ck::::res://Sounds/shellImpact.wav
+shotgun.tscn::PackedScene::5412942288340386871::1713562460::0::1::::<><>::uid://tuqjg1r3b0l8::::res://Models/shotgun_pump shotgun.png<>res://Scripts/shotgun.gd<>uid://cenb2rctv3j1a::::res://FjallaOne-Regular.ttf
+squirrel.tscn::PackedScene::3192116532181141299::1713562460::0::1::::<><>::res://Scripts/squirrel.gd
+tree.tscn::PackedScene::12469067919750203::1713562460::0::1::::<><>::uid://batu31utyo2y1::::res://Models/tree.png
+victory.tscn::PackedScene::809171294729598114::1713562460::0::1::::<><>::
+view_model.tscn::PackedScene::5125494170286565526::1713562460::0::1::::<><>::
+::res://Scripts/::1713562460
+AudioManager.gd::GDScript::-1::1713562460::0::1::::<>Node<>::
+couch.gd::GDScript::-1::1713562460::0::1::::<>Node3D<>::
+GameManager.gd::GDScript::-1::1713562460::0::1::::<>Node3D<>::
+outline.gdshader::Shader::-1::1713562460::0::1::::<><>::
+Player.gd::GDScript::-1::1713562460::0::1::::<>CharacterBody3D<>::
+shell.gd::GDScript::-1::1713562460::0::1::::<>RigidBody3D<>::
+shotgun.gd::GDScript::-1::1713562460::0::1::::<>Node3D<>::
+squirrel.gd::GDScript::-1::1713562460::0::1::::<>CharacterBody3D<>::
+::res://Sounds/::1713562460
+fire.wav::AudioStreamWAV::4511655818095003540::1713562460::1713562460::1::::<><>::
+grass-footstep.wav::AudioStreamWAV::8254213160185615323::1713562460::1713617914::1::::<><>::
+rack.wav::AudioStreamWAV::1481895349368089837::1713562460::1713562460::1::::<><>::
+shell-load.wav::AudioStreamWAV::4557904539694236784::1713562460::1713562460::1::::<><>::
+shellImpact.wav::AudioStreamWAV::3012587647133043958::1713562460::1713562460::1::::<><>::

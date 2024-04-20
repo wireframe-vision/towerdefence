@@ -16,7 +16,7 @@ func _physics_process(delta):
 		
 		var direction = Vector3()
 		
-		nav.target_position = Vector3(0,0.9,0)
+		nav.target_position = target.global_position
 		
 		direction = nav.get_next_path_position() - global_position
 		direction = direction.normalized()

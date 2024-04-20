@@ -1,2 +1,7 @@
-res://Scenes/game.tscn
 res://Scenes/main_menu.tscn
+res://Scenes/game.tscn
+res://Scenes/squirrel.tscn
+res://Scenes/player.tscn
+res://Scenes/victory.tscn
+res://Scenes/loss.tscn
+res://Scripts/GameManager.gd

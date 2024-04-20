@@ -17,8 +17,6 @@ shape = SubResource("BoxShape3D_nr5xq")
 mesh = SubResource("BoxMesh_1wqki")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-path_desired_distance = 0.2
-target_desired_distance = 0.2
 
 [node name="breadEatTimer" type="Timer" parent="."]
 
