@@ -20,7 +20,7 @@ func _physics_process(delta):
 		
 		direction = nav.get_next_path_position() - global_position
 		direction = direction.normalized()
-		
+		$squ.look_at(global_position + -direction, Vector3.UP)
 		velocity = velocity.lerp(direction * SPEED, ACCEL * delta)
 		
 		move_and_slide()

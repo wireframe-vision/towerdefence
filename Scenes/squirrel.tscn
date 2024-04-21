@@ -1,10 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://blqjxtaf4la00"]
 
 [ext_resource type="Script" path="res://Scripts/squirrel.gd" id="1_qqgdc"]
+[ext_resource type="PackedScene" uid="uid://c43618itbvr46" path="res://Models/squ.glb" id="2_y1dh2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nr5xq"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_1wqki"]
 
 [node name="squirrel" type="CharacterBody3D" groups=["squirrel"]]
 collision_layer = 2
@@ -13,12 +12,12 @@ script = ExtResource("1_qqgdc")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_nr5xq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_1wqki")
-
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="breadEatTimer" type="Timer" parent="."]
+
+[node name="squ" parent="." instance=ExtResource("2_y1dh2")]
+transform = Transform3D(0.185, 0, 0, 0, 0.185, 0, 0, 0, 0.185, 0, -0.058991, 0)
 
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
 [connection signal="timeout" from="breadEatTimer" to="." method="_on_bread_eat_timer_timeout"]

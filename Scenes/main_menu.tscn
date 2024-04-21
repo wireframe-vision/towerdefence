@@ -1,3 +1,147 @@
-[gd_scene format=3 uid="uid://xk8gt31bacx6"]
+[gd_scene load_steps=17 format=3 uid="uid://xk8gt31bacx6"]
+
+[ext_resource type="FontFile" uid="uid://cenb2rctv3j1a" path="res://FjallaOne-Regular.ttf" id="1_xedgb"]
+[ext_resource type="Texture2D" uid="uid://4hjth6j1j81j" path="res://Models/splash.png" id="2_5dcid"]
+[ext_resource type="Texture2D" uid="uid://cs3ufl6hne21k" path="res://Models/storymode.png" id="3_rvxbf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jibvb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r1rh0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_808pi"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2x74"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1cul"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e73xj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbqk0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02cjd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xs7k1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2hims"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Animation" id="Animation_mtyxk"]
+resource_name = "beat"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(0.5, 0.5, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.13, 1.13), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bjgas"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_woesm"]
+_data = {
+"RESET": SubResource("Animation_bjgas"),
+"beat": SubResource("Animation_mtyxk")
+}
 
 [node name="MainMenu" type="CanvasLayer"]
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 128.0
+offset_right = 128.0
+offset_bottom = 240.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 144.0
+offset_bottom = 101.0
+
+[node name="Button" type="Button" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_xedgb")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_jibvb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r1rh0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_808pi")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_v2x74")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s1cul")
+text = "Play"
+
+[node name="Button2" type="Button" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_xedgb")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_e73xj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jbqk0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_02cjd")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_xs7k1")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2hims")
+text = "Credits"
+
+[node name="Logo" type="TextureRect" parent="."]
+z_index = 1
+offset_left = -172.0
+offset_top = 7.0
+offset_right = 342.0
+offset_bottom = 79.0
+texture = ExtResource("2_5dcid")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -120.0
+offset_right = 160.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_rvxbf")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_woesm")
+}
+autoplay = "beat"

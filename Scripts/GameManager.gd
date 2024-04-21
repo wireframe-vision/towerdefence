@@ -23,6 +23,7 @@ var canSpawn = true
 
 
 func _ready() -> void:
+	$CanvasLayer/AnimationPlayer.play("fade_2")
 	randomize()
 	start()
 	
@@ -80,5 +81,5 @@ func endGame(won):
 	await $CanvasLayer/AnimationPlayer.animation_finished
 	if won:
 		get_tree().change_scene_to_file("res://Scenes/victory.tscn")
-	else:
+	elif not won:
 		get_tree().change_scene_to_file("res://Scenes/loss.tscn")
